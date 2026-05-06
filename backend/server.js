@@ -6,6 +6,7 @@ const app = express();
 
 // Middleware
 app.use(cors());
+origin: "https://curious-squirrel-4b7790.netlify.app"
 app.use(express.json());
 
 // 1. Connection to MongoDB Atlas
