@@ -25,7 +25,7 @@ const handleSubmit = async (e) => {
     console.log("📤 Sending Data:", formData);
 
     try {
-        const response = await fetch("http://localhost:5000/api/contact", {
+        const response = await fetch("https://appscare-redesign-1.onrender.com/api/contact", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
