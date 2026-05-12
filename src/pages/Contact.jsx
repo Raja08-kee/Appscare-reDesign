@@ -22,12 +22,16 @@ export default function Contact() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Relative path works when frontend and backend are on the same Hostinger domain
-    const API_URL = "/api/contact.php";
+    /**
+     * CHANGE 1: Use the absolute URL for local development.
+     * This allows your localhost to talk to your Hostinger backend.
+     */
+    const API_URL = "https://appscaretech.com/api/contact.php";
 
     try {
       const response = await fetch(API_URL, {
         method: "POST",
+        mode: "cors", // CHANGE 2: Explicitly set CORS mode
         headers: {
           "Content-Type": "application/json",
           "Accept": "application/json"
@@ -35,20 +39,23 @@ export default function Contact() {
         body: JSON.stringify(formData)
       });
 
+      /**
+       * CHANGE 3: Improved response handling.
+       * We check if the response is JSON before parsing to avoid "Unexpected token" errors.
+       */
       const result = await response.json();
 
-      if (response.ok) {
+      if (response.ok && result.status === "success") {
         setIsSuccess(true);
         setFormData({ name: '', email: '', subject: '', message: '' });
-        // Auto-hide success message after 5 seconds
         setTimeout(() => setIsSuccess(false), 5000);
       } else {
-        // This will show the specific error from your PHP script (e.g., SQL errors)
-        alert("❌ Server Error: " + (result.error || "Something went wrong"));
+        // Show the specific error message returned by your PHP script
+        alert("❌ Server Error: " + (result.message || result.error || "Something went wrong"));
       }
     } catch (error) {
       console.error("Submission Error:", error);
-      alert("❌ Connection Failed: Ensure your PHP backend is uploaded to /public_html/api/contact.php");
+      alert("❌ Connection Failed: The frontend cannot reach the backend. Ensure your PHP file is uploaded and CORS is enabled.");
     } finally {
       setIsSubmitting(false);
     }
@@ -80,7 +87,10 @@ export default function Contact() {
               </div>
               <div className="flex items-center gap-4 p-4 bg-white rounded-2xl shadow-sm border border-slate-100">
                 <Phone className="text-primary" />
-                <span className="text-slate-700 font-medium text-sm md:text-base">+91 9966727754</span>
+                <div className="flex flex-col">
+                  <span className="text-slate-700 font-medium text-sm md:text-base">+91 9966727754</span>
+                  <span className="text-slate-700 font-medium text-sm md:text-base">+91 9700475707</span>
+                </div>
               </div>
             </div>
           </div>
@@ -100,8 +110,8 @@ export default function Contact() {
                   className="absolute inset-0 z-10 flex flex-col items-center justify-center bg-white rounded-[2rem] text-center p-6"
                 >
                   <CheckCircle2 size={60} className="text-green-500 mb-4" />
-                  <h3 className="text-2xl font-bold text-slate-900">Message Received!</h3>
-                  <p className="text-slate-500 mt-2">Check your database; the data should be there now.</p>
+                  <h3 className="text-2xl font-bold text-slate-900">Message Sent!</h3>
+                  <p className="text-slate-500 mt-2">Thank you for reaching out. We will contact you shortly.</p>
                 </motion.div>
               )}
             </AnimatePresence>

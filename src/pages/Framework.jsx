@@ -5,17 +5,17 @@ import { Box, Lock, Cpu, Network, ArrowRight } from 'lucide-react';
 export default function Framework() {
   return (
     <div className="w-full min-h-screen bg-slate-950 pt-32 pb-20 relative overflow-hidden flex flex-col items-center justify-center">
-      
+
       {/* Technical SEO */}
-      <SEO 
+      <SEO
         title="The AppsCare Framework | Coming Soon"
         description="We are documenting our proprietary A2A integration blueprint and cloud modernization framework. Stay tuned for a deep dive into our technical methodology."
         path="/framework"
       />
 
       {/* Technical Grid Background */}
-      <div className="absolute inset-0 opacity-20" 
-           style={{ backgroundImage: `radial-gradient(circle, #0ea5e9 1px, transparent 1px)`, backgroundSize: '32px 32px' }}>
+      <div className="absolute inset-0 opacity-20"
+        style={{ backgroundImage: `radial-gradient(circle, #0ea5e9 1px, transparent 1px)`, backgroundSize: '32px 32px' }}>
       </div>
 
       <section className="container mx-auto px-6 max-w-4xl relative z-10 text-center">
@@ -55,8 +55,8 @@ export default function Framework() {
 
           {/* Waitlist CTA */}
           <div className="flex flex-col md:flex-row items-center justify-center gap-3">
-            <input 
-              type="email" 
+            <input
+              type="email"
               placeholder="Enter email for early access"
               className="w-full md:w-64 px-4 py-2.5 bg-white/5 border border-white/10 rounded-lg text-xs text-white focus:outline-none focus:border-primary transition-all"
             />

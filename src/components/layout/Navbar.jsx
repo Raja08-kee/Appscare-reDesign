@@ -1,58 +1,40 @@
-import { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Menu, X, Cpu } from 'lucide-react';
-import { navLinks } from '../../data';
 
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
-  const [isOpen, setIsOpen] = useState(false);
-  const location = useLocation();
+  const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
+    const handleScroll = () => setIsScrolled(window.scrollY > 20);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
-    <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'glassmorphism py-3' : 'bg-transparent py-5'}`}>
-      <div className="container mx-auto px-6 md:px-12 flex justify-between items-center">
-        
-        {/* Logo */}
-        <Link to="/" className="flex items-center gap-2 group">
-          <div className="p-2 bg-primary/10 rounded-xl group-hover:bg-primary/20 transition-colors">
-            <Cpu className="text-primary w-6 h-6" />
+    <nav className={`fixed w-full z-50 transition-all duration-500 ${isScrolled ? 'py-3 bg-slate-950/80 backdrop-blur-xl border-b border-white/10' : 'py-6 bg-transparent'
+      }`}>
+      <div className="container mx-auto px-6 flex justify-between items-center">
+        <div className="flex items-center gap-3">
+          <div className="w-10 h-10 bg-gradient-to-br from-sky-500 to-indigo-600 rounded-xl flex items-center justify-center shadow-lg shadow-sky-500/20">
+            <Cpu className="text-white" size={24} />
           </div>
-          <span className="text-xl font-bold tracking-tight text-slate-900">
-            AppsCare<span className="text-primary">.</span>
+          <span className="text-2xl font-black text-white tracking-tighter uppercase">
+            App<span className="text-sky-500">Scare</span>
           </span>
-        </Link>
+        </div>
 
-        {/* Desktop Nav */}
-        <nav className="hidden md:flex gap-8 items-center">
-          {navLinks.map((link) => (
-            <Link 
-              key={link.name} 
-              to={link.path}
-              className={`text-sm font-medium transition-colors hover:text-primary relative ${location.pathname === link.path ? 'text-primary' : 'text-slate-600'}`}
-            >
-              {link.name}
-              {location.pathname === link.path && (
-                <motion.div layoutId="underline" className="absolute -bottom-1 left-0 w-full h-[2px] bg-primary rounded-full" />
-              )}
-            </Link>
+        <div className="hidden md:flex items-center gap-8">
+          {['Services', 'Portfolio', 'About', 'Contact'].map((item) => (
+            <a key={item} href={`#${item.toLowerCase()}`} className="text-sm font-bold text-slate-400 hover:text-white transition-colors uppercase tracking-widest">
+              {item}
+            </a>
           ))}
-          <button className="px-5 py-2.5 bg-slate-900 text-white text-sm font-medium rounded-full hover:bg-primary transition-colors shadow-lg shadow-slate-900/20">
-            Get Started
+          <button className="px-6 py-2.5 bg-sky-500 hover:bg-sky-400 text-white text-xs font-black rounded-full shadow-lg shadow-sky-500/30 transition-all uppercase tracking-widest">
+            Let's Talk
           </button>
-        </nav>
-
-        {/* Mobile Toggle */}
-        <button className="md:hidden text-slate-600" onClick={() => setIsOpen(!isOpen)}>
-          {isOpen ? <X /> : <Menu />}
-        </button>
+        </div>
       </div>
-    </header>
+    </nav>
   );
 }

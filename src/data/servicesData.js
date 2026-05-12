@@ -1,110 +1,114 @@
 export const servicesData = {
+  // New Service: Middleware
+  'middleware': {
+    title: 'Middleware Solutions',
+    subtitle: 'Robust Data Orchestration',
+    category: 'ENTERPRISE ARCHITECTURE',
+    heroDescription: 'Powering enterprise connectivity through high-performance middleware solutions that act as the backbone of your digital ecosystem.',
+    heroImage: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1200',
+    process: [
+      { label: 'ARCHITECTURE AUDIT', desc: 'Analyzing current data silos and identifying communication bottlenecks.' },
+      { label: 'TOPOLOGY DESIGN', desc: 'Architecting scalable hub-and-spoke or service bus models.' },
+      { label: 'LAYER DEPLOYMENT', desc: 'Zero-downtime implementation of the integration layer.' },
+      { label: 'PERFORMANCE TUNING', desc: 'Continuous monitoring for sub-millisecond orchestration.' }
+    ],
+    features: [
+      { title: 'Data Orchestration', desc: 'Managing complex data flows across disparate systems.' },
+      { title: 'Protocol Bridging', desc: 'Connecting legacy systems with modern cloud services.' },
+      { title: 'High Availability', desc: 'Active-active configurations ensuring zero downtime.' }
+    ],
+    techStack: ['WebMethods', 'Apache Kafka', 'IBM MQ', 'MuleSoft']
+  },
+
+  // New Service: B2B Integration
+  'b2b-integration': {
+    title: 'B2B Integration',
+    subtitle: 'Partner Connectivity',
+    category: 'SUPPLY CHAIN SYNC',
+    heroDescription: 'Seamlessly connecting your business with partners, suppliers, and global marketplaces through secure protocols.',
+    heroImage: 'https://images.unsplash.com/photo-1566933293069-b55c7f326dd4?q=80&w=1200',
+    process: [
+      { label: 'ONBOARDING', desc: 'Standardizing communication protocols for rapid partner integration.' },
+      { label: 'PROTOCOL SETUP', desc: 'Configuring secure AS2, SFTP, and HTTPS channels.' },
+      { label: 'DATA MAPPING', desc: 'Translating partner formats (X12, EDIFACT) into internal requirements.' },
+      { label: 'SECURITY', desc: 'Enforcing end-to-end encryption for every transaction.' }
+    ],
+    features: [
+      { title: 'EDI Automation', desc: 'Eliminating manual data entry with automated workflows.' },
+      { title: 'Visibility Portals', desc: 'Real-time tracking of order statuses for all stakeholders.' },
+      { title: 'Compliance Engine', desc: 'Validation of documents against industry business rules.' }
+    ],
+    techStack: ['B2B Gateway', 'OpenText', 'Cleo', 'Sterling B2B']
+  },
+
+  // New Service: A2A Integration
+  'a2a-integration': {
+    title: 'A2A Integration',
+    subtitle: 'Internal Synchronization',
+    category: 'CORE INFRASTRUCTURE',
+    heroDescription: 'Creating a unified data environment by synchronizing internal core applications like ERP and CRM in real-time.',
+    heroImage: 'https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200',
+    process: [
+      { label: 'SYSTEM MAPPING', desc: 'Defining data dependencies across your internal application suite.' },
+      { label: 'SYNC TRIGGERS', desc: 'Implementing real-time triggers to ensure data consistency.' },
+      { label: 'LEGACY BRIDGING', desc: 'Wrapping monolithic applications in modern API layers.' },
+      { label: 'INTEGRITY TESTING', desc: 'Automated validation suites to prevent data corruption.' }
+    ],
+    features: [
+      { title: 'Real-time Sync', desc: 'Instant data propagation across ERP and CRM systems.' },
+      { title: 'MDM Control', desc: 'Centralized control of core business entities.' },
+      { title: 'Workflow Automation', desc: 'Triggering internal processes based on cross-system events.' }
+    ],
+    techStack: ['SAP PI/PO', 'BizTalk', 'Dell Boomi', 'Informatica']
+  },
+
+  // Existing Services
   'api-integration': {
     title: 'API Integration',
     subtitle: 'Enterprise Connectivity',
     category: 'A2A & MIDDLEWARE',
-    heroDescription: 'Eliminate data silos with robust Application-to-Application (A2A) frameworks. We build the connective tissue between your legacy systems and modern SaaS platforms using secure, high-throughput middleware.',
+    heroDescription: 'Eliminate data silos with robust Application-to-Application (A2A) frameworks using secure, high-throughput middleware.',
     heroImage: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1200',
     process: [
-      { label: 'ENDPOINT DISCOVERY', desc: 'Deep-dive analysis of existing REST, SOAP, and GraphQL endpoints to map data dependencies.' },
-      { label: 'SCHEMA MAPPING', desc: 'Standardizing data formats (JSON/XML) across platforms to ensure lossless information transfer.' },
-      { label: 'LOGIC ENFORCEMENT', desc: 'Implementing complex business rules and data transformations within the middleware layer.' },
-      { label: 'LATENCY TUNING', desc: 'Optimizing request-response cycles and implementing Redis-based caching for sub-millisecond speeds.' }
+      { label: 'ENDPOINT DISCOVERY', desc: 'Deep-dive analysis of REST, SOAP, and GraphQL endpoints.' },
+      { label: 'SCHEMA MAPPING', desc: 'Standardizing JSON/XML data formats across platforms.' },
+      { label: 'LOGIC ENFORCEMENT', desc: 'Implementing business rules within the middleware layer.' },
+      { label: 'LATENCY TUNING', desc: 'Optimizing cycles with Redis-based caching.' }
     ],
     features: [
-      { title: 'A2A Orchestration', desc: 'Automating multi-step workflows across diverse software ecosystems without manual intervention.' },
-      { title: 'Secure Gateway Ops', desc: 'Hardened API gateways featuring rate limiting, IP whitelisting, and deep packet inspection.' },
-      { title: 'Payload Optimization', desc: 'Gzip compression and selective field filtering to reduce bandwidth overhead for mobile clients.' }
+      { title: 'A2A Orchestration', desc: 'Automating multi-step workflows across diverse ecosystems.' },
+      { title: 'Secure Gateway', desc: 'Hardened gateways with rate limiting and IP whitelisting.' },
+      { title: 'Payload Optimization', desc: 'Gzip compression and selective field filtering.' }
     ],
-    techStack: ['WebMethods', 'MuleSoft', 'Node.js', 'Redis', 'GraphQL', 'AWS API Gateway']
-  },
-
-  'managed-it': {
-    title: 'Managed IT',
-    subtitle: 'Operational Excellence',
-    category: '24/7 OPERATIONS',
-    heroDescription: 'Offload the complexity of infrastructure management to our global NOC teams. We provide proactive monitoring, automated patching, and strategic maintenance to ensure 99.99% uptime.',
-    heroImage: 'https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=1200',
-    process: [
-      { label: 'INFRA AUDIT', desc: 'Comprehensive health check of servers, storage, and network configurations to identify bottlenecks.' },
-      { label: 'AGENT DEPLOYMENT', desc: 'Installing lightweight observability agents for real-time telemetry and log aggregation.' },
-      { label: 'INCIDENT PLAYBOOKS', desc: 'Developing automated response scripts for common failure modes to minimize Mean Time to Recovery (MTTR).' },
-      { label: 'QUARTERLY REVIEW', desc: 'Strategic alignment sessions to ensure IT infrastructure scales with your evolving business goals.' }
-    ],
-    features: [
-      { title: 'Proactive Monitoring', desc: 'AI-driven anomaly detection that identifies potential hardware or software failures before they impact users.' },
-      { title: 'Patch Automation', desc: 'Coordinated rollout of critical security updates across OS, database, and middleware layers.' },
-      { title: 'L3 Support Desk', desc: 'Direct access to senior systems engineers for complex troubleshooting and architectural guidance.' }
-    ],
-    techStack: ['ServiceNow', 'Datadog', 'Splunk', 'Nagios', 'Terraform', 'Ansible']
-  },
-
-  'cloud-infrastructure': {
-    title: 'Cloud Infrastructure',
-    subtitle: 'Scalable Architecture',
-    category: 'CLOUD NATIVE',
-    heroDescription: 'Architecting the future on AWS, Azure, and GCP. We design high-availability, multi-cloud environments that leverage Infrastructure as Code (IaC) for rapid, repeatable deployments.',
-    heroImage: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1200',
-    process: [
-      { label: 'CLOUD READINESS', desc: 'Assessing on-prem workloads for migration suitability and identifying potential refactoring needs.' },
-      { label: 'IAC AUTHORING', desc: 'Writing modular Terraform or CloudFormation scripts to define VPCs, subnets, and compute clusters.' },
-      { label: 'MIGRATION SPRINT', desc: 'Phased data and application migration using high-speed direct connects to minimize downtime.' },
-      { label: 'COST OPTIMIZATION', desc: 'Implementing auto-scaling and spot-instance strategies to reduce monthly cloud expenditure.' }
-    ],
-    features: [
-      { title: 'Multi-Region Failover', desc: 'Designing active-active configurations across global data centers for disaster resilience.' },
-      { title: 'Containerization', desc: 'Standardizing deployment units with Docker and orchestrating them via managed Kubernetes (EKS/AKS).' },
-      { title: 'Serverless Compute', desc: 'Leveraging AWS Lambda and Azure Functions for event-driven tasks that scale to zero cost.' }
-    ],
-    techStack: ['AWS', 'Azure', 'Kubernetes', 'Terraform', 'Docker', 'Google Cloud']
-  },
-
-  'cybersecurity': {
-    title: 'Cybersecurity',
-    subtitle: 'Threat Resilience',
-    category: 'DEFENSIVE SEC',
-    heroDescription: 'Protecting your digital assets in an era of sophisticated cyber warfare. We deploy zero-trust architectures and SOC-as-a-Service to defend against data breaches and ransomware.',
-    heroImage: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1200',
-    process: [
-      { label: 'THREAT MODELING', desc: 'Identifying potential attack vectors and prioritizing defenses based on risk profiles.' },
-      { label: 'SECURE BASELINING', desc: 'Implementing CIS benchmarks across all servers and network devices for a hardened posture.' },
-      { label: 'SIEM INTEGRATION', desc: 'Centralizing security logs to provide a "single pane of glass" view for threat hunting.' },
-      { label: 'PEN-TESTING', desc: 'Simulated attacks to validate the effectiveness of existing controls and identify blind spots.' }
-    ],
-    features: [
-      { title: 'Zero Trust Access', desc: 'Verifying every user and device for every session, regardless of their location on the network.' },
-      { title: 'EDR Deployment', desc: 'Endpoint Detection and Response to stop advanced persistent threats (APTs) at the workstation level.' },
-      { title: 'Data Encryption', desc: 'Enforcing AES-256 encryption for data at rest and TLS 1.3 for all information in transit.' }
-    ],
-    techStack: ['CrowdStrike', 'Palo Alto', 'Fortinet', 'Azure Sentinel', 'Wireshark', 'Metasploit']
+    techStack: ['WebMethods', 'MuleSoft', 'Node.js', 'Redis', 'GraphQL']
   },
 
   'it-consulting': {
     title: 'IT Consulting',
     subtitle: 'Strategic Roadmap',
     category: 'DIGITAL TRANSFORMATION',
-    heroDescription: 'Navigating the gap between technology and business strategy. Our consultants provide the technical roadmap needed to transform legacy bottlenecks into competitive advantages.',
+    heroDescription: 'Navigating the gap between technology and business strategy with a technical roadmap.',
     heroImage: 'https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1200',
     process: [
-      { label: 'TECH DISCOVERY', desc: 'Evaluating the current technical debt and assessing the maturity of IT operations.' },
-      { label: 'GAP ANALYSIS', desc: 'Comparing current capabilities against industry best practices and business requirements.' },
-      { label: 'STRATEGY DESIGN', desc: 'Authoring a multi-year investment and technology roadmap with clear ROI markers.' },
-      { label: 'GOVERNANCE', desc: 'Establishing frameworks for ongoing technical decision-making and vendor management.' }
+      { label: 'TECH DISCOVERY', desc: 'Evaluating technical debt and IT operation maturity.' },
+      { label: 'GAP ANALYSIS', desc: 'Comparing current capabilities against industry best practices.' },
+      { label: 'STRATEGY DESIGN', desc: 'Authoring a multi-year roadmap with clear ROI markers.' },
+      { label: 'GOVERNANCE', desc: 'Establishing frameworks for technical decision-making.' }
     ],
     features: [
-      { title: 'Digital Transformation', desc: 'Re-engineering business processes to leverage cloud-native and AI-augmented workflows.' },
-      { title: 'Legacy Modernization', desc: 'Step-by-step strategies to phase out monolithic systems in favor of microservices.' },
-      { title: 'Compliance Prep', desc: 'Aligning IT operations with HIPAA, GDPR, or SOC2 requirements to ensure global market access.' }
+      { title: 'Digital Transformation', desc: 'Re-engineering processes for cloud-native workflows.' },
+      { title: 'Legacy Modernization', desc: 'Strategies to phase out monoliths for microservices.' },
+      { title: 'Compliance Prep', desc: 'Aligning operations with HIPAA, GDPR, or SOC2.' }
     ],
-    techStack: ['Jira', 'Miro', 'Confluence', 'Visio', 'PowerBI', 'Trello']
+    techStack: ['Jira', 'Miro', 'Confluence', 'PowerBI']
   },
 
   'corporate-trainings': {
     title: "Corporate Trainings",
     subtitle: "Empowering Your Workforce",
     category: "Professional Development",
-    heroDescription: "Tailored IT training programs designed to bridge the skill gap and modernize your internal technical capabilities.",
-    heroImage: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=800&auto=format&fit=crop",
+    heroDescription: "Tailored IT training programs designed to bridge the skill gap and modernize your capabilities.",
+    heroImage: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=800",
     process: [
       { label: "Assessment", desc: "Evaluating current team skill levels." },
       { label: "Curriculum", desc: "Customizing modules for your tech stack." },
@@ -115,15 +119,15 @@ export const servicesData = {
       { title: "On-Site & Remote", desc: "Flexible delivery models for global teams." },
       { title: "Custom Labs", desc: "Real-world environments for practical learning." }
     ],
-    techStack: ["React", "Cloud Ops", "Security Compliance", "DevOps"]
+    techStack: ["React", "Cloud Ops", "Security", "DevOps"]
   },
 
   'modern-edi': {
     title: "Modern EDI",
     subtitle: "Supply Chain Excellence",
     category: "Logistics Automation",
-    heroDescription: "Streamline your supply chain with cloud-native Electronic Data Interchange solutions for faster, error-free transactions.",
-    heroImage: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=800&auto=format&fit=crop",
+    heroDescription: "Streamline your supply chain with cloud-native EDI solutions for faster transactions.",
+    heroImage: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=800",
     process: [
       { label: "Onboarding", desc: "Connecting partners to your digital network." },
       { label: "Mapping", desc: "Translating complex data formats seamlessly." },
@@ -134,6 +138,6 @@ export const servicesData = {
       { title: "AS2 & SFTP Support", desc: "Secure protocols for industry-standard exchange." },
       { title: "Real-time Alerts", desc: "Instant notification for failed transactions." }
     ],
-    techStack: ["XML", "JSON", "AS2", "Managed File Transfer"]
+    techStack: ["XML", "JSON", "AS2", "MFT"]
   }
 };

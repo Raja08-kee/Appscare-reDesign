@@ -5,7 +5,7 @@ import { servicesData } from '../data/servicesData';
 
 export default function ServiceDetail() {
   const { serviceId } = useParams();
-  
+
   // Look up the specific documentation from our data file
   const currentService = servicesData[serviceId];
 
@@ -17,14 +17,14 @@ export default function ServiceDetail() {
       </div>
     );
   }
-    return (
+  return (
     <>
-        <SEO 
-        title={currentService.title} 
-        description={currentService.heroDescription} 
-        path={`/service/${serviceId}`} 
-        />
-        <ServiceTemplate data={currentService} />
+      <SEO
+        title={currentService.title}
+        description={currentService.heroDescription}
+        path={`/service/${serviceId}`}
+      />
+      <ServiceTemplate data={currentService} />
     </>
-    );
+  );
 }
